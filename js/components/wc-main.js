@@ -77,15 +77,24 @@ class WcMain extends HTMLElement {
           padding-left: 100px; 
         }
         .nav button {
-          padding: 16px 16px;
+          padding: 18px 16px;
           cursor: pointer;
           border-radius: 6px;
           border: none;
           font-weight: bold;
           transition: background 0.3s;
           background: #374151;
+          font-size: 16px;
+          font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        
           color: white;
         }
+          /* Efecto al pasar el mouse (Hover) */
+        .nav button:hover {
+          background: #5f656dff; 
+          transform: translateY(-2px); 
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          }
         .nav button.active { background: #facc15; color: #1f2937; }
 
         .countries {
@@ -101,15 +110,20 @@ class WcMain extends HTMLElement {
         grid-template-columns: repeat(3, 1fr);  /* 3 columnas */
         gap: 20px;
         max-width: 1200px;
-        margin: 0 auto;  /* ✅ CENTRA HORIZONTALMENTE */
+        display: flex;
+        margin: 0 auto;  
     }
 
-        .empty {
+          .empty{
           text-align: center;
           margin-top: 40px;
           font-size: 18px;
           color: #374151;
+          align-items: center;    
+         justify-content: center; 
+         margin-left: 90px;
         }
+
 
         .pagination {
           display: flex;
@@ -135,6 +149,18 @@ class WcMain extends HTMLElement {
           background: #9ca3af;
           cursor: not-allowed;
         }
+
+          .btn-back{
+            padding: 10px 20px;
+        border-radius: 6px;
+        border: none;
+        background: #facc15;
+        color: #1f2937;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s, background 0.2s;
+          }
+        
       </style>
 
  <!-- Barra de navegación -->
@@ -147,8 +173,9 @@ class WcMain extends HTMLElement {
       ${
         list.length === 0 && this.view === 'Favoritos'
           ? `<div class="empty">
-                <p>No tienes países favoritos ⭐</p>
-                <button id="volver">Volver a Inicio</button>
+               <p class="emoji">⭐</p>
+          <p class="text">¡Aún no tienes países favoritos!</p>
+                <button class="btn-back" id="volver">Volver a Inicio</button>
              </div>`
           : `<div class="countries">
                 ${pageItems.map(country => `
