@@ -1,5 +1,6 @@
 import './country-card/country-card.js';
 
+
 class WcMain extends HTMLElement {
 
       // Constructor: inicializa variables y Shadow DOM
@@ -60,7 +61,7 @@ class WcMain extends HTMLElement {
 
     const start = (this.currentPage - 1) * this.itemsPerPage;
 
-    
+
     const end = start + this.itemsPerPage;
     const pageItems = list.slice(start, end);
 

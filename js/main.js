@@ -1,6 +1,7 @@
-import './Components/wc-main.js';
-import './Components/country-modal/country-modal.js';
-import './Components/footer.js';
+import './components/country-card/country-card.js';
+import './components/country-modal/country-modal.js';
+import './components/footer.js'; 
+import './components/wc-main.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
