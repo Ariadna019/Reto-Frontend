@@ -1,0 +1,36 @@
+/* Reset básico */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background: #f3f4f6;
+}
+
+
+header h1 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centra horizontal */
+  justify-content: flex-start; /* empieza desde arriba, no pegado al header */
+  width: 100%;
+  padding: 20px;
+  min-height: calc(100vh - 140px); /* altura restante del header y footer */
+  background: #f3f4f6;
+}
+
+
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+}
